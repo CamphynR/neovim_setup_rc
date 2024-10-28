@@ -20,10 +20,11 @@ require('nvim-tree').setup({
             enable = true
         },
         filters = {
-            dotfiles = true
+            dotfiles = false
         },
         git = {
-            enable = true
+            enable = true,
+            ignore = false
             },
         filesystem_watchers = {
             enable = true 
