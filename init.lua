@@ -3,6 +3,8 @@ require('keymaps') -- Key bindings
 require('config.lazy') -- lazy nvim package manager
 require('colorscheme') -- Color scheme
 require('nerdicons').setup({}) -- Font
+require('vim-slime')
+
 -- lsp config 
 require('mason').setup() -- mason for lsp management
 require('mason-lspconfig').setup({
@@ -10,7 +12,6 @@ require('mason-lspconfig').setup({
 })
 
 -- folder structure
-
 require('nvim-tree').setup({
         view = {
             width = 30,
@@ -27,7 +28,7 @@ require('nvim-tree').setup({
             ignore = false
             },
         filesystem_watchers = {
-            enable = true 
+            enable = true
             }
 })
 
@@ -41,3 +42,4 @@ require("mason-lspconfig").setup_handlers {
             }
         end,
 }
+
