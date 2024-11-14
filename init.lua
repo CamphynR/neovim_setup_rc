@@ -41,13 +41,21 @@ require("mason-lspconfig").setup_handlers {
             capabilities = capabilities
             }
         end,
-        ["python-lsp-server"] = function ()
-            require("pylsp").setup({
-		plugins={
-		pycodestyle={
-                	ignore={"E501", "E302", "E122", "E251"}
-			}            
-		}})
+
+        ["pylsp"] = function ()
+            lspconfig.pylsp.setup {
+                capabilities = capabilities,
+                settings = {
+                        pylsp = {
+                            plugins = {
+                                pycodestyle = {
+                                    ignore = { "E501", "E302", "E303", "E122", "E203", "E251" },
+                                    maxLineLength = 100
+                                }
+                            }
+                        }
+                    }
+                }		
         end
 
 }
