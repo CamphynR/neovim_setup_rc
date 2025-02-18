@@ -49,7 +49,7 @@ require("mason-lspconfig").setup_handlers {
                         pylsp = {
                             plugins = {
                                 pycodestyle = {
-                                    ignore = { "E501", "E302", "E303", "E122", "E203", "E251" },
+                                    ignore = { "E501", "E302", "E303", "E122", "E203", "E226", "E251", "W291", "W293"},
                                     maxLineLength = 100
                                 }
                             }
