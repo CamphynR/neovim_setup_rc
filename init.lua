@@ -55,7 +55,20 @@ require("mason-lspconfig").setup_handlers {
                             }
                         }
                     }
-                }		
+                }
+        end,
+        ["clangd"] = function()
+            lspconfig.clangd.setup {
+                capabilities = capabilities,
+                cmd = {
+                    "clangd",
+                    "-I/usr/include",
+                    "-I/usr/local/include",
+                    "-I./include",
+                    "-std=c++11",
+                    "--query-driver=/usr/bin/g++",
+                },
+            }
         end
 
 }
